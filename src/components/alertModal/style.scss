@@ -1,0 +1,19 @@
+.btn-grad {
+    background-image: linear-gradient(to right, #F1F2B5 0%, #135058 51%, #F1F2B5 100%);
+    margin: 10px;
+    padding: 15px 45px; /* This padding will be overridden by Tailwind */
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    display: block;
+  }
+  
+  .btn-grad:hover {
+    background-position: right center; /* Change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+  
