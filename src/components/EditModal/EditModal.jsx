@@ -1,28 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Cropper from "react-easy-crop";
 import getCroppedImg from "./getCroppedImg";
+import "./style.css"
 
 const EditlModal = ({ closeModalEdit, openModal }) => {
-  const [imageSrc, setImageSrc] = useState("");
+  const [imageSrcs, setImageSrcs] = useState("");
+  const fileInputRef = useRef(null);
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
   const [showCropper, setShowCropper] = useState(false);
+  const [isImageClicked, setIsImageClicked] = useState(false);
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImageSrc(reader.result);
+        setImageSrcs(reader.result);
         setShowCropper(true);
       };
       reader.readAsDataURL(file);
     }
   };
 
-  const handleImageClick = () => {
-    document.getElementById("fileInput").click();
+  const handleImageClicks = () => {
+    fileInputRef.current.click();
+    setTimeout(() => {
+      setIsImageClicked(true);
+    }, 500); 
+  };
+
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImageSrcs(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleCropComplete = (croppedArea, croppedAreaPixels) => {
@@ -30,8 +48,8 @@ const EditlModal = ({ closeModalEdit, openModal }) => {
   };
 
   const handleConfirmCrop = async () => {
-    const croppedImage = await getCroppedImg(imageSrc, croppedAreaPixels);
-    setImageSrc(croppedImage);
+    const croppedImage = await getCroppedImg(imageSrcs, croppedAreaPixels);
+    setImageSrcs(croppedImage);
     setShowCropper(false);
     closeModalEdit();
   };
@@ -54,43 +72,55 @@ const EditlModal = ({ closeModalEdit, openModal }) => {
             <div className="flex flex-col items-center">
               <div
                 className="relative w-full h-32 bg-gray-300 rounded-lg flex items-center justify-center mb-4 cursor-pointer"
-                onClick={handleImageClick}
+                onClick={handleImageClicks}
               >
                 <img
-                  src={imageSrc || ""}
+                  src={imageSrcs || ""}
                   alt=""
                   className="w-full h-full object-cover rounded-lg"
                 />
+                <input
+                  type="file"
+                  accept="image/*"
+                  ref={fileInputRef}
+                  onChange={handleFileChange}
+                  className="hidden"
+                />
                 <div className="absolute inset-0 bg-black opacity-10" />{" "}
-                <h2
-                  className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white"
-                  style={{
-                    fontFamily: "Vazir",
-                    fontSize: "12px",
-                    fontWeight: "900",
-                    lineHeight: "24px",
-                    letterSpacing: "-0.02em",
-                    textAlign: "center",
-                    width: "141px",
-                    height: "24px",
-                    zIndex: "2",
-                  }}
-                >
-                  ویرایش تصویر پروفایل
-                </h2>
+                {!isImageClicked && ( 
+                  <h2
+                    className="fade-out absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white"
+                    style={{
+                      fontFamily: "Vazir",
+                      fontSize: "12px",
+                      fontWeight: "900",
+                      lineHeight: "24px",
+                      letterSpacing: "-0.02em",
+                      textAlign: "center",
+                      width: "141px",
+                      height: "24px",
+                      zIndex: "2",
+                    }}
+                  >
+                    ویرایش تصویر پروفایل
+                  </h2>
+                )}
                 <div className="absolute inset-0 backdrop-blur-sm bg-black/50 rounded-lg flex items-center justify-center">
                   {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={48}
-                    height={48}
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="#808080"
-                      d="m22.7 14.3l-1 1l-2-2l1-1c.1-.1.2-.2.4-.2c.1 0 .3.1.4.2l1.3 1.3c.1.2.1.5-.1.7M13 19.9V22h2.1l6.1-6.1l-2-2zM21 5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h6v-1.9l1.1-1.1H5l3.5-4.5l2.5 3l3.5-4.5l1.6 2.1l4.9-5z"
-                    ></path>
-                  </svg>
+                  {!isImageClicked && ( 
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={48}
+                      height={48}
+                      viewBox="0 0 24 24"
+                      className="absolute" // این کلاس برای قرار دادن SVG در موقعیت دلخواه
+                    >
+                      <path
+                        fill="#808080"
+                        d="m22.7 14.3l-1 1l-2-2l1-1c.1-.1.2-.2.4-.2c.1 0 .3.1.4.2l1.3 1.3c.1.2.1.5-.1.7M13 19.9V22h2.1l6.1-6.1l-2-2zM21 5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h6v-1.9l1.1-1.1H5l3.5-4.5l2.5 3l3.5-4.5l1.6 2.1l4.9-5z"
+                      ></path>
+                    </svg>
+                  )}
                 </div>
               </div>
               <input

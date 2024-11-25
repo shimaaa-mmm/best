@@ -1,0 +1,33 @@
+.fade-out {
+    position: absolute;
+    bottom: 0.5rem; 
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: Vazir;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    width: 141px;
+    height: 24px;
+    z-index: 2;
+    opacity: 1; 
+    transition: opacity 0.5s ease; 
+  }
+  
+  .fade-out.hidden {
+    opacity: 0; 
+  }
+  .profile-image-container {
+    width: 100%;
+    height: 128px;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  

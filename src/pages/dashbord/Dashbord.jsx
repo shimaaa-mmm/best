@@ -8,7 +8,7 @@ import Pagination from "../../components/Pagination/Pagination";
 import Aside from "../../components/aside/Aside";
 import EditlModal from "../../components/EditModal/EditModal";
 import AttendanceList from "../../components/AttendanceList/AttendanceList";
-import "./style.scss"
+import "./style.scss";
 
 const data = [
   {
@@ -185,6 +185,9 @@ const Dashbord = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [isModalEdit, setIsModalEdit] = useState(false);
+  const handleConfirmImage = (croppedImage) => {
+    setProfileImage(croppedImage); 
+  };
 
   const openModalEdit = () => {
     setIsModalEdit(true);
@@ -229,10 +232,10 @@ const Dashbord = () => {
 
   const [userSelection, setUserSelection] = useState();
 
-  const clickRowHandler = (id) => {
-    const user = users.filter((user) => user.id == id)[0];
-    setUserSelection(user);
-  };
+  // const clickRowHandler = (id) => {
+  //   const user = users.filter((user) => user.id == id)[0];
+  //   setUserSelection(user);
+  // };
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
@@ -240,13 +243,21 @@ const Dashbord = () => {
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
-
+  const clickRowHandler = (id) => {
+    const user = users.find((user) => user.id === id);
+    setUserSelection(user);
+  };
   useEffect(() => {
-    const clickHandler = () => {
-      console.log("click");
-      setUserSelection(null);
+    const clickHandler = (e) => {
+      if (!e.target.closest("tr")) {
+        setUserSelection(null);
+      }
     };
+
     document.documentElement.addEventListener("click", clickHandler);
+    return () => {
+      document.documentElement.removeEventListener("click", clickHandler);
+    };
   }, []);
 
   return (
@@ -258,7 +269,7 @@ const Dashbord = () => {
         <div className="header h-16 w-full bg-gray-200/30"></div>
 
         <div className="main grid grid-cols-12 gap-6  h-[calc(100%-4rem)] p-2">
-          <div className="contentTable col-span-8 h-[912px] w-[752px] bg-slate-300/80 rounded-[20px] px-6 absolute top-[96px] left-[492px] gap-[8px]">
+          <div className="contentTable col-span-8 h-[912px] w-[752px] bg-[#D7D7D7] shadow-[0px_0px_15px_2px_#00000026] rounded-[20px] px-6 absolute top-[96px] left-[492px] gap-[8px]">
             {" "}
             <div className="py-3 top-0 ">
               <h2 className="w-[104px] h-[27px] top-[24px] left-[624px] gap-0 font-vazir text-[20px] font-medium leading-[27px] text-right absolute">
@@ -291,14 +302,14 @@ const Dashbord = () => {
                     const isSpecialId = specialIds.includes(item.id);
                     return (
                       <tr
-                      key={item.id}
-                      onDoubleClick={() => clickRowHandler(item.id)}
-                      className={`w-[720px] h-[48px] gap-0 border-b-2 border-[#506d64] text-center cursor-pointer group transition duration-300 ease-in-out transform hover-effect ${
-                        userSelection?.id === item.id
-                          ? "!bg-[#c8ddc8] border-b-2 border-[#506d64] opacity-90"
-                          : isSpecialId
-                          ? "bg-[#D7D7D7] opacity-90"
-                          : "bg-[#EBEBEB] opacity-90"
+                        key={item.id}
+                        onClick={() => clickRowHandler(item.id)}
+                        className={`w-[720px] h-[48px] gap-0 border-b-2 border-[#506d64] text-center cursor-pointer group transition duration-300 ease-in-out transform  hover-effect ${
+                          userSelection?.id === item.id
+                            ? "!bg-[#c8ddc8] border-b-2 border-[#506d64] opacity-90"
+                            : isSpecialId
+                            ? "bg-[#D7D7D7] opacity-90"
+                            : "bg-[#EBEBEB] opacity-90"
                         }`}
                       >
                         <td className="border border-b border-[#506d64] px-4 text-center w-[24px] h-[24px] relative">
@@ -346,7 +357,10 @@ const Dashbord = () => {
                               {item.lastExit.split(" ")[0]}
                             </span>
                             <span>{item.lastExit.split(" ")[1]}</span>
-                            <Link to="/calendar" className="cursor-pointer text-gray-600 mr-[10px] ">
+                            <Link
+                              to="/calendar"
+                              className="cursor-pointer text-gray-600 mr-[10px] "
+                            >
                               <FontAwesomeIcon icon={faCalendarAlt} />
                             </Link>
                           </span>
@@ -355,7 +369,7 @@ const Dashbord = () => {
                           className=" px-4 justify-center space-x-2 flex mt-[11px]"
                           dir="ltr"
                         >
-                          <Link to="/delete" className="cursor-pointer">
+                          <Link to="/delete" className="cursor-pointer ">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="1.2rem"
@@ -401,9 +415,9 @@ const Dashbord = () => {
               </table>
             </div>
             <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
+              currentPage={1}
               onPageChange={setCurrentPage}
+              users={users}
             />
           </div>
 

@@ -1,8 +1,317 @@
-.hover-effect {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
 
-.hover-effect:hover {
-    transform: scale(1.01); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-}
+  
+/* 
+// import { useEffect, useState } from "react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faCalendar, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+// import { Link } from "react-router-dom";
+// import Alert from "../../components/alertModal/Alert";
+// import CameraModal from "../../components/cameraModal/CameraModal";
+// import Pagination from "../../components/Pagination/Pagination";
+// import Aside from "../../components/aside/Aside";
+// import EditlModal from "../../components/EditModal/EditModal";
+// import AttendanceList from "../../components/AttendanceList/AttendanceList";
+// import "./style.scss"
+
+// const data = [
+//   {
+//     id: 1,
+//     firstName: "ارش",
+//     lastName: "جعفری",
+//     image: "https://picsum.photos/200/400",
+//     field: "بخش اداری",
+//     lastEntry: "1402/06/10 12:45:43",
+//     lastExit: "1402/06/10 12:45:43",
+//     explanation:
+//       "یک توضیح تستی. ارش در بخش اداری به عنوان مسئول ثبت ورود و خروج کارکنان فعالیت می‌کند. او به جزئیات توجه ویژه‌ای دارد و همواره سعی در بهبود فرآیندها دارد.",
+//   },
+//   {
+//     id: 2,
+//     firstName: "ارش",
+//     lastName: "معروفی",
+//     image: "https://picsum.photos/300/300",
+//     field: "بخش اداری",
+//     lastEntry: "1402/06/10 12:45:43",
+//     lastExit: "1402/06/10 12:45:43",
+//     explanation:
+//       "ارش معروفی از افراد کلیدی در تیم اداری است. او تجربه زیادی در مدیریت امور داخلی دارد و به بهینه‌سازی عملکرد سازمان کمک می‌کند. همچنین به مهارت‌های ارتباطی خود افتخار می‌کند.",
+//   },
+//   {
+//     id: 3,
+//     firstName: "ارش",
+//     lastName: "معروفی",
+//     image: "https://picsum.photos/250/400",
+//     field: "بخش اداری",
+//     lastEntry: "1402/06/10 12:45:43",
+//     lastExit: "1402/06/10 12:45:43",
+//     explanation:
+//       "توضیحی ندارد. اما به عنوان یک عضو از تیم اداری، ارش مسئولیت‌های متعددی دارد. او همیشه در حال یادگیری و به روزرسانی مهارت‌های خود است.",
+//   },
+//   {
+//     id: 4,
+//     firstName: "ارش",
+//     lastName: "معروفی",
+//     image: "https://picsum.photos/450/400",
+//     field: "بخش اداری",
+//     lastEntry: "1402/06/10 12:45:43",
+//     lastExit: "1402/06/10 12:45:43",
+//     explanation:
+//       "با اینکه توضیح خاصی برای این فرد وجود ندارد، ارش در زمینه اداری به خوبی عمل می‌کند. او نقش مهمی در تسهیل ارتباطات داخلی دارد و همکارانش به او اعتماد دارند.",
+//   },
+//   {
+//     id: 5,
+//     firstName: "ارش",
+//     lastName: "معروفی",
+//     image: "https://picsum.photos/280/400",
+//     field: "بخش اداری",
+//     lastEntry: "1402/06/10 12:45:43",
+//     lastExit: "1402/06/10 12:45:43",
+//     explanation:
+//       "ارش با تسلط به نرم‌افزارهای اداری به خوبی امور را مدیریت می‌کند. او همواره به دنبال راه‌هایی برای کاهش زمان و هزینه‌ها در فرآیندها است. همکارانش او را فردی مبتکر می‌دانند.",
+//   },
+//   {
+//     id: 6,
+//     firstName: "ارش",
+//     lastName: "معروفی",
+//     image: "https://picsum.photos/500/400",
+//     field: "بخش اداری",
+//     lastEntry: "1402/06/10 12:45:43",
+//     lastExit: "1402/06/10 12:45:43",
+//     explanation:
+//       "توضیحات خاصی برای ارش وجود ندارد، اما او به عنوان یک کارمند قابل اعتماد شناخته می‌شود. مهارت‌های سازمانی او به بهبود کارایی بخش کمک کرده است.",
+//   },
+//   {
+//     id: 7,
+//     firstName: "ارش",
+//     lastName: "معروفی",
+//     image: "https://picsum.photos/300/300",
+//     field: "بخش اداری",
+//     lastEntry: "1402/06/10 12:45:43",
+//     lastExit: "1402/06/10 12:45:43",
+//     explanation:
+//       "ارش با توجه به تجربه‌اش در بخش اداری، همیشه مشاوره‌های مفیدی ارائه می‌دهد. او به همکاری‌های تیمی اعتقاد دارد و سعی در ارتقاء روحیه تیمی دارد. همکارانش او را فردی مثبت می‌دانند.",
+//   },
+//   {
+//     id: 8,
+//     firstName: "ارش",
+//     lastName: "کاظمی",
+//     image: "https://picsum.photos/220/400",
+//     field: "بخش IT",
+//     lastEntry: "1402/06/10 14:15:00",
+//     lastExit: "1402/06/10 14:15:00",
+//     explanation:
+//       "ارش کاظمی به عنوان یک متخصص IT شناخته می‌شود. او مسئول نگهداری و به‌روزرسانی سیستم‌های کامپیوتری در سازمان است. تجربیات او در حل مسائل فنی برای تیم بسیار ارزشمند است.",
+//   },
+//   {
+//     id: 9,
+//     firstName: "ارش",
+//     lastName: "آرمانی",
+//     image: "https://picsum.photos/320/300",
+//     field: "بخش مالی",
+//     lastEntry: "1402/06/10 11:30:20",
+//     lastExit: "1402/06/10 11:30:20",
+//     explanation:
+//       "ارش آرمانی در بخش مالی با دقت به جزئیات کار می‌کند. او در تجزیه و تحلیل داده‌های مالی و گزارش‌دهی تخصص دارد. او به دنبال بهینه‌سازی فرآیندهای مالی سازمان است.",
+//   },
+//   {
+//     id: 10,
+//     firstName: "ارش",
+//     lastName: "نوروزی",
+//     image: "https://picsum.photos/240/400",
+//     field: "بخش فروش",
+//     lastEntry: "1402/06/10 15:00:10",
+//     lastExit: "1402/06/10 15:00:10",
+//     explanation:
+//       "ارش نوروزی به عنوان یکی از بهترین فروشندگان شناخته می‌شود. او توانایی بالایی در ارتباط با مشتریان دارد و سعی می‌کند نیازهای آنان را به خوبی درک کند. همواره در تلاش است تا فروش را افزایش دهد.",
+//   },
+//   {
+//     id: 11,
+//     firstName: "ارش",
+//     lastName: "کمالی",
+//     image: "https://picsum.photos/300/350",
+//     field: "بخش خدمات",
+//     lastEntry: "1402/06/10 10:45:30",
+//     lastExit: "1402/06/10 10:45:30",
+//     explanation:
+//       "ارش کمالی در بخش خدمات با مشتریان در تماس است. او به حل مشکلات مشتریان توجه ویژه‌ای دارد و سعی می‌کند بهترین خدمات را ارائه دهد. او همیشه به دنبال یادگیری مهارت‌های جدید است.",
+//   },
+//   {
+//     id: 12,
+//     firstName: "ارش",
+//     lastName: "علیزاده",
+//     image: "https://picsum.photos/260/400",
+//     field: "بخش تولید",
+//     lastEntry: "1402/06/10 09:15:55",
+//     lastExit: "1402/06/10 09:15:55",
+//     explanation:
+//       "ارش علیزاده در بخش تولید فعالیت می‌کند و مسئولیت‌های زیادی دارد. او به افزایش کیفیت محصولات اهمیت می‌دهد و همواره در تلاش است تا کارایی را افزایش دهد. تیم تولید به همکاری با او افتخار می‌کند.",
+//   },
+//   {
+//     id: 13,
+//     firstName: "ارش",
+//     lastName: "میری",
+//     image: "https://picsum.photos/280/400",
+//     field: "بخش اداری",
+//     lastEntry: "1402/06/10 08:30:00",
+//     lastExit: "1402/06/10 08:30:00",
+//     explanation:
+//       "ارش میری به عنوان یک کارمند متعهد شناخته می‌شود. او به کارهای اداری و مدیریتی علاقه‌مند است و سعی در بهبود فرآیندهای داخلی دارد. همکارانش به او اعتماد کامل دارند.",
+//   },
+//   {
+//     id: 14,
+//     firstName: "ارش",
+//     lastName: "صبوری",
+//     image: "https://picsum.photos/320/400",
+//     field: "بخش اداری",
+//     lastEntry: "1402/06/10 12:00:00",
+//     lastExit: "1402/06/10 12:00:00",
+//     explanation:
+//       "ارش صبوری به عنوان یکی از اعضای کلیدی تیم اداری شناخته می‌شود. او به حل مسائل و چالش‌های اداری بسیار ماهر است. او به بازخوردهای همکارانش توجه دارد و سعی در بهبود مستمر دارد.",
+//   },
+//   {
+//     id: 15,
+//     firstName: "ارش",
+//     lastName: "جباری",
+//     image: "https://picsum.photos/360/400",
+//     field: "بخش اداری",
+//     lastEntry: "1402/06/10 13:15:00",
+//     lastExit: "1402/06/10 13:15:00",
+//     explanation:
+//       "ارش جباری در بخش اداری کار می‌کند و تجربه خوبی دارد. او در ایجاد ارتباطات موثر با همکاران و مدیران تبحر دارد. همچنین سعی می‌کند فضای کاری مثبتی ایجاد کند.",
+//   },
+// ];
+
+// const Dashbord = () => {
+//   const [users, setUsers] = useState([]);
+//   const [title, setTitle] = useState("");
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+//   const [isModalEdit, setIsModalEdit] = useState(false);
+//   const [isModalCamera, setIsModalCamera] = useState(false);
+//   const [isModalAttendanceList, setIsModalAttendanceList] = useState(false);
+//   const [currentPage, setCurrentPage] = useState(1);
+//   const itemsPerPage = 5;
+//   const [userSelection, setUserSelection] = useState(null);
+
+//   useEffect(() => {
+//     // Fetch users from the server
+//     const fetchUsers = async () => {
+//       try {
+//         const response = await fetch("http://localhost:5000/api/users");
+//         const data = await response.json();
+//         setUsers(data);
+//       } catch (error) {
+//         console.error("Failed to fetch users:", error);
+//       }
+//     };
+
+//     fetchUsers();
+//   }, []);
+
+//   const addUser = async (newUser) => {
+//     try {
+//       const response = await fetch("http://localhost:5000/api/users", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(newUser),
+//       });
+
+//       if (response.ok) {
+//         const createdUser = await response.json();
+//         setUsers((prevUsers) => [...prevUsers, createdUser]);
+//       }
+//     } catch (error) {
+//       console.error("Failed to add user:", error);
+//     }
+//   };
+
+//   const totalPages = Math.ceil(users.length / itemsPerPage);
+//   const currentItems = users.slice(
+//     (currentPage - 1) * itemsPerPage,
+//     currentPage * itemsPerPage
+//   );
+
+//   const openModal = (titleMsg) => {
+//     setTitle(titleMsg);
+//     setIsModalOpen(true);
+//   };
+
+//   const closeModal = () => {
+//     setIsModalOpen(false);
+//     setTitle("");
+//   };
+
+//   const openModalEdit = () => setIsModalEdit(true);
+//   const closeModalEdit = () => setIsModalEdit(false);
+
+//   const openModalCamera = () => setIsModalCamera(true);
+//   const closeModalCamera = () => setIsModalCamera(false);
+
+//   const openModalAttendanceList = () => setIsModalAttendanceList(true);
+//   const closeModalAttendanceList = () => setIsModalAttendanceList(false);
+
+//   const clickRowHandler = (id) => {
+//     const user = users.find((user) => user.id === id);
+//     setUserSelection(user);
+//   };
+
+//   useEffect(() => {
+//     const clickHandler = (e) => {
+//       if (!e.target.closest("tr")) {
+//         setUserSelection(null);
+//       }
+//     };
+
+//     document.documentElement.addEventListener("click", clickHandler);
+//     return () => {
+//       document.documentElement.removeEventListener("click", clickHandler);
+//     };
+//   }, []);
+
+//   return (
+//     <div className="h-screen w-full flex relative" dir="rtl">
+//       <div className="flex-1 p-4">
+//         <h1 className="text-xl font-bold">داشبورد کاربران</h1>
+//         {/* Your existing code for rendering the user table goes here */
+/* //         <table className="min-w-full border-collapse">
+//           <thead>
+//             <tr>
+//               <th>نام</th>
+//               <th>نام خانوادگی</th>
+//               <th>تصویر</th>
+//               <th>بخش</th>
+//               <th>ورود آخر</th>
+//               <th>خروج آخر</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {currentItems.map((user) => (
+//               <tr key={user.id} onClick={() => clickRowHandler(user.id)}>
+//                 <td>{user.firstName}</td>
+//                 <td>{user.lastName}</td>
+//                 <td>
+//                   <img src={user.image} alt={`${user.firstName} ${user.lastName}`} />
+//                 </td>
+//                 <td>{user.field}</td>
+//                 <td>{user.lastEntry}</td>
+//                 <td>{user.lastExit}</td>
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//         <Pagination
+//           currentPage={currentPage}
+//           totalPages={totalPages}
+//           onPageChange={setCurrentPage}
+//         />
+//       {/* Modals */
+/* //       {isModalOpen && <Alert onClose={closeModal} title={title} />}
+//         {isModalEdit && <EditModal onClose={closeModalEdit} user={userSelection} />}
+//         {isModalCamera && <CameraModal onClose={closeModalCamera} />}
+//         {isModalAttendanceList && <AttendanceList onClose={closeModalAttendanceList} user={userSelection} />}
+//       </div>
+//     </div>
+//   );
+// };
+// export default Dashbord;  */ 
