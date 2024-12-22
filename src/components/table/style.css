@@ -1,0 +1,606 @@
+.table-container {
+  background-color: #d7d7d7;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 768px;
+  margin-left: 12px;
+  margin-top: 14px;
+}
+
+.table {
+  width: 100%;
+}
+body{
+  margin: 0 auto;
+}
+
+
+.table-row {
+  border-bottom: 1px solid #4a4a4a;
+}
+
+.table-cell {
+  padding: 8px 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.table-cell-sm {
+  padding: 16px 0;
+}
+
+.table-cell-base {
+  font-size: 14px;
+}
+
+.icon {
+  cursor: pointer;
+  margin-bottom: 8px;}
+
+.icon-calendar {
+  color: #3b82f6;
+  font-size: 1.25rem;
+}
+
+.icon-clock {
+  color: #10b981;
+  font-size: 1.25rem;
+}
+
+.icon-users {
+  color: #facc15;
+  font-size: 1.25rem;
+}
+
+.icon-sm {
+  font-size: 1.5rem;
+}
+
+.icon-md {
+  font-size: 2rem;
+}
+
+body {
+  font-family: "Vazir", sans-serif;
+}
+
+.hover-effect:hover {
+  background-color: #f3f4f6;
+}
+
+.icon-hover:hover {
+  color: #0066cc;
+}
+.table-responsive {
+  display: block;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cell-number {
+  border: 1px solid #bdbdbd;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.ico {
+  color: #ff0000; /* رنگ اولیه قرمز */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.ico:hover {
+  animation: colorChange 2s infinite, scaleUp 0.3s ease-in-out;
+}
+
+@keyframes colorChange {
+  0% { color: #ff0000; } /* قرمز */
+  25% { color: #ff8000; } /* نارنجی */
+  50% { color: #ffff00; } /* زرد */
+  75% { color: #ff8000; } /* نارنجی */
+  100% { color: #ff0000; } /* قرمز */
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+/* تعریف انیمیشن */
+@keyframes colorFade {
+  0% {
+    background-color: #ebebeb; /* رنگ اولیه */
+  }
+  50% {
+    background-color: #d7f2d7; /* رنگ میانی */
+  }
+  100% {
+    background-color: #c8ddc8; /* رنگ نهایی */
+  }
+}
+
+/* برای ردیف‌های جدول */
+table tbody tr {
+  animation: colorFade 3s ease-in-out;
+  transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+/* برای هاور */
+table tbody tr:hover {
+  background-color: #b8e6b8;
+  color: #263e26;
+  animation: none; /* در هاور انیمیشن را متوقف کنید */
+}
+
+/* برای ردیف انتخاب شده */
+table tbody tr.selected {
+  animation: colorFade 3s infinite; /* انیمیشن دائمی */
+  background-color: #c8ddc8;
+  color: #263e26;
+}
+
+@media (max-width: 468px) {
+  .contentTable {
+    max-width: 500px !important;
+    height: 500px !important;
+    overflow-x: hidden !important;
+  }
+
+  .contentTable table {
+    width: 100%;
+    height: auto; 
+  }
+
+  .tru {
+    height: 40px;
+  }
+
+  .tru td {
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  .shomareh {
+    width: 24px;
+    height: 24px;
+  }
+
+  .php img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .lef {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+  .rotate {
+    font-size: 10px;
+  }
+
+  .icon svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+
+@media (max-width: 468px) {
+  .contentTable {
+    padding: 13px 17px !important;
+    display: block;
+    max-width: 480px; 
+    margin: 0 auto;
+    overflow-x: hidden !important;
+  }
+
+  .table {
+    margin: 0 auto;
+    width: 100% !important;
+    overflow-x: auto !important;
+    border: none;
+  }
+
+  .ros {
+    width: 100%; 
+    margin-top: 32px;
+  }
+
+  .table thead {
+    display: none; 
+    border: none;
+  }
+
+  .table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    display: contents;
+    flex-direction: column;
+    /* width: 100%; */
+    border: 1px solid #506d64;
+    box-sizing: border-box;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%; 
+    border-bottom: none;
+    border: none;
+  }
+
+  .contentTable .php {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .contentTable .php img {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .contentTable .lef {
+    padding: 9px;
+  }
+
+  .table td span {
+    text-align: center;
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  .contentTable .name {
+    font-size: 14px;
+  }
+
+  .contentTable .icon {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  .contentTable .number {
+    display: block;
+    margin-top: -9px;
+    background: none;
+    border: none;
+    margin-left: -5px;
+  }
+  .hidde{
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 576px) {
+  .contentTable {
+    max-width: 500px !important;
+    height: 550px !important;
+    overflow-x: hidden !important;
+  
+
+  }
+  .contentTable td {
+    padding: 18px 0px 19px 0px !important;  }
+
+  .table {
+    width: 100%; 
+    height: auto;
+  }
+  .contentTable thead th {
+    padding: 7px !important;
+  }
+  .contentTable .lef {
+    display: block;
+    font-size: 9px !important;
+    padding: 8px 6px 6px 5px !important
+  }
+  .contentTable .name {
+    font-size: 11px;
+    margin-top: -3px;
+  }
+  .table-responsive th {
+    font-size: 12px;
+  }
+  .contentTable .shomareh {
+    margin-left: 0px;
+    margin-top: 18px;
+  }
+  .contentTable .number {
+    width: 15px;
+    font-size: 12px;
+  }
+
+  .contentTable .php img {
+    width: 30px;
+    height: 30px; 
+    margin-top: -1px !important;
+  }
+  .contentTable .icon {
+    margin-top: 7px;
+  }
+  .contentTable .icon a {
+    font-size: 13px;
+  }
+  .contentTable .icon .camera {
+    font-size: 10px;
+  }
+  .contentTable .rotate {
+    font-size: 12px !important;
+    font-weight: 300;  }
+}
+@media (max-width: 640px) {
+  .contentTable .rotate {
+    font-size: 11px;
+  }
+  .contentTable {
+    max-width: 500px !important;
+    height: 550px !important;
+    overflow-x: hidden !important;
+
+  }
+  .contentTable td {
+    height: 33px;
+    padding: 15px;
+  }
+  .table {
+    width: 100%; 
+    height: auto;
+  }
+
+  .modat {
+    width: 15px !important;
+    font-size: 12px;
+  }
+  .contentTable .lef{
+    padding: 1px 17px 3px 10px;
+  }
+  .contentTable .php img {
+    width: 27px;
+    height: 27px;
+    margin-top: -1px !important;
+  
+  }
+
+  .name {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentTable {
+    max-width: 500px !important;
+    height: 550px !important;
+    overflow: auto;
+  }
+  .table {
+    width: 100%; 
+    height: auto;
+  }
+  .table-row {
+    border-bottom: 1px solid #4a4a4a; /* رنگ مرز */
+  }
+
+  .table-cell {
+    padding: 10px 5px; /* پدینگ برای سلول‌ها */
+    font-size: 12px; /* اندازه فونت */
+    font-weight: 600; /* بولد کردن */
+  }
+
+  .table-cell-base {
+    font-size: 14px; /* اندازه فونت پایه */
+  }
+
+  .table-responsive {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* برای حرکت نرم‌تر در موبایل */
+  }
+
+  .contentTable .icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .contentTable .ioi{
+    margin-top: 8px !important;
+  }
+  .modat {
+    width: 15px !important;
+  }
+
+  .icon-hover:hover {
+    color: #0066cc; /* تغییر رنگ آیکون */
+  }
+
+  .number {
+    border: 1px solid #bdbdbd;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    width: 20px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .hover-effect:hover {
+    background-color: #f3f4f6; /* تغییر رنگ ردیف */
+  }
+
+  .contentTable .php {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* مرکز کردن */
+  }
+  .contentTable .php img{
+   margin-top: 10px;
+  }
+}
+@media (max-width: 992px) {
+    .contentTable {
+      max-width: 500px !important;
+      height: 550px !important;
+      overflow: auto;
+    }
+  
+  
+  .table {
+    width: 100% !important; 
+    height: auto;
+  }
+  /* .little{
+    margin-right: -110px;
+  margin-left: 68px;
+  } */
+  .contentTable thead th {
+    padding: 10px; /* Adjust padding for table headers */
+  }
+  
+  .table-cell {
+    padding: 12px 6px; /* Padding for cells */
+    font-size: 13px; /* Font size for table cells */
+  }
+  
+  .table-row {
+    border-bottom: 1px solid #4a4a4a; /* Adjust border for table rows */
+  }
+  
+  .icon {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    margin: 12px 0; /* Top and bottom margin */
+    font-size: 16px; /* Icon font size */
+  }
+  
+  .modat {
+    border: 1px solid #bdbdbd;
+    background-color: #e0e0e0;
+    border-radius: 50%; /* Circular element */
+    width: 33px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto; /* Center the element */
+    
+  }
+    .modat{
+      margin-top: 4px;
+    }
+  
+  
+  .hover-effect:hover {
+    background-color: #f3f4f6; /* Hover effect */
+  }
+  
+  .php img {
+    width: 30px; /* Image size */
+    height: 30px;
+    margin-top: 4px;
+  }
+  
+  .contentTable .lef {
+    font-size: 13px !important;
+  }
+  
+  .contentTable .icon a {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .contentTable {
+    width: 100% !important;
+    max-width: 96% !important;
+    margin: auto;
+    padding: 14px 10px;
+  }
+
+  .contentTable thead th {
+    padding: 12px;
+    font-size: 14px; /* تنظیم فونت بخش سر جدول */
+  }
+  .ros {
+    padding: 6px !important;
+    --tw-shadow: 0px 0px 15px 2px #00000026;
+    --tw-shadow-colored: 0px 0px 15px 2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    --tw-bg-opacity: 1;
+    background-color: rgb(215 215 215) !important;
+    border-radius: 10px;
+  }
+
+  .table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .table-row {
+    border-bottom: 1px solid #4a4a4a;
+  }
+
+  .table-cell {
+    padding: 14px 8px;
+    font-size: 14px; /* اندازه مناسب برای این رزولوشن */
+  }
+
+  .table-cell-base {
+    font-size: 16px; /* اندازه بزرگتر برای سلول‌های خاص */
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    margin: 14px 0;
+    font-size: 18px; /* اندازه بزرگتر آیکون‌ها */
+  }
+
+  .modat {
+    border: 1px solid #bdbdbd;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .hover-effect:hover {
+    background-color: #f3f4f6;
+  }
+
+  .php img {
+    width: 40px; /* افزایش اندازه تصویر */
+    height: 40px;
+  }
+
+  .contentTable .lef {
+    font-size: 14px;
+  }
+
+  .contentTable .icon a {
+    font-size: 15px;
+  }
+}

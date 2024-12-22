@@ -1,0 +1,152 @@
+/* General Styles */
+.fade-out {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-family: Vazir, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  width: 141px;
+  height: 24px;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.fade-out.hidden {
+  opacity: 0;
+}
+
+.profile-image-container {
+  width: 100%;
+  height: 128px;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+  margin-bottom: 16px;
+}
+
+.flex-item {
+  width: 100%;
+  padding: 0 8px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: Vazir, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 21px;
+  text-align: right;
+  color: #02060c;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .file{
+    margin-top: -8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .flex-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .item {
+    width: 48%;
+  }
+
+  .covar {
+    width: 90% !important;
+    height: 87%;
+  }
+
+  .dark {
+    margin-top: 0;
+  }
+
+  .to {
+    width: 58%;
+  }
+
+  .input {
+    height: 45px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .flex-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .covar {
+    width: 85% !important;
+    height: 91%;
+    overflow-y: scroll;
+  }
+
+  .dark {
+    margin-top: -1px;
+  }
+}
+
+@media (max-width: 468px) {
+  .flex-item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .item {
+    width: 48%;
+  }
+
+  .covar {
+    width: 86% !important;
+    height: 98%;
+  }
+
+  .lefti {
+    width: 108% !important;
+    margin-left: -9px;
+  }
+
+  .righty {
+    width: 111% !important;
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 375px) {
+  .bt {
+    width: 116% !important;
+  }
+}

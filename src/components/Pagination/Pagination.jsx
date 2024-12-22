@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./style.scss"
 
 const Pagination = ({ currentPage, onPageChange }) => {
   const totalPages = 11;
@@ -21,12 +22,12 @@ const Pagination = ({ currentPage, onPageChange }) => {
   };
 
   return (
-    <div className="flex justify-center items-center mt-1">
-      <div className="flex justify-center items-center p-4" dir="ltr">
+    <div className="flex justify-center items-center mt-1 px-2 sm:px-4">
+      <div className="flex justify-center items-center p-2 sm:p-4 rap" dir="ltr">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="text-gray-500 mx-2"
+          className="text-gray-500 mx-1 sm:mx-2 text-xs sm:text-sm nam"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,11 +47,11 @@ const Pagination = ({ currentPage, onPageChange }) => {
             <button
               key={pageNumber}
               onClick={() => handlePageChange(pageNumber)}
-              className={`mx-1 px-3 py-1 rounded-md ${
+              className={`mx-1 px-2 py-1 rounded-md ${
                 currentPage === pageNumber
                   ? "bg-green-900 text-white"
                   : "text-gray-500"
-              }`}
+              } text-xs sm:text-sm`}
             >
               {pageNumber}
             </button>
@@ -59,7 +60,7 @@ const Pagination = ({ currentPage, onPageChange }) => {
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="text-gray-500 mx-2"
+          className="text-gray-500 mx-1 sm:mx-2 text-xs sm:text-sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,0 +1,19 @@
+
+  // Media Query برای اندازه کمتر از 370 پیکسل
+  @media (max-width: 375px) {
+    .pagination-container {
+      padding: 0; // حذف فاصله‌های اضافی
+  
+      .rap {
+        width: 100% !important ; // عرض کامل کانتینر
+        padding: 0.25rem !important; // کاهش فاصله داخلی
+        flex-wrap: wrap !important; // دکمه‌ها را به خط‌های جدید انتقال می‌دهد
+  
+        button {
+          font-size: 0.625rem; // اندازه فونت کوچک‌تر (10 پیکسل)
+          padding: 0.25rem 0.5rem; // کاهش فاصله داخلی
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,67 @@
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tbody tr {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+table tbody tr:hover {
+  background-color: #d7f2d7; 
+  color: #263E26;
+}
+
+table tbody tr.selected {
+  background-color: #c8ddc8 !important;
+  color: #263E26 !important;
+  transition: background-color 0.5s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+  .table-responsive table {
+    font-size: 12px; 
+  }
+
+  .table-responsive th,
+  .table-responsive td {
+    padding: 8px; 
+  }
+
+  .table-responsive th {
+    text-align: center;
+  }
+
+  .table-responsive td {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-responsive table {
+    font-size: 10px; 
+  }
+
+  .table-responsive th,
+  .table-responsive td {
+    padding: 5px;
+  }
+
+  .table-responsive td {
+    display: block;
+    word-wrap: break-word;
+  }
+
+  .table-responsive td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+  }
+}
+

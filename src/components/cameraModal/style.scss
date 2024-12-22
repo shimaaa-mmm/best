@@ -1,0 +1,356 @@
+
+@media (max-width: 1024px) {
+  .responsive-modal {
+    width: 68% !important;
+    padding: 24px !important;
+    margin-top: 63px;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+
+    > * {
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 19px !important;
+    }
+  }
+
+  .flex .icon-right {
+    font-size: 18px;
+    margin-top: 40px;
+  }
+
+  img {
+    max-width: 98%;
+    height: auto;
+    margin-top: -10px;
+  }
+
+  .img-left {
+    width: 80px;
+    height: 70px;
+    margin-top: -97px;
+  }
+
+  .data {
+    font-size: 19px;
+  }
+
+  .long {
+    width: 100% !important; /* خط کامنت‌شده در صورت نیاز اینجا می‌آید */
+  }
+
+  .res {
+    height: 95px;
+  }
+
+  .left {
+    margin-top: 40px;
+    font-size: 14px;
+  }
+
+  .telex {
+    font-size: 16px;
+  }
+
+  .up {
+    font-size: 17px;
+  }
+}
+@media (max-width: 992px) {
+  .responsive-modal {
+    width: 60% !important;
+    padding: 22px !important;
+    margin-top: -93px;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+
+    > * {
+      width: 100%;
+      margin-bottom: 5px;
+      font-size: 18px !important;
+  
+    }
+  }
+
+  .flex .icon-right {
+    font-size: 17px;
+    margin-top: 50px;
+  }
+
+  img {
+    max-width: 98%;
+    height: auto;
+    margin-top: -15px;
+  }
+
+  .img-left {
+    width: 70px;
+    height: 65px;
+    margin-top: -76px;
+  
+  }
+
+  .data {
+    font-size: 18px;
+  }
+
+  .long {
+    width: 100% !important; /* خط کامنت‌شده در صورت نیاز اینجا می‌آید */
+  }
+
+  .res {
+    height: 90px;
+  }
+
+  .left {
+    margin-top: 53px;
+    font-size: 16px;
+  }
+
+  .telex {
+    font-size: 15px;
+  }
+
+  .up {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-modal {
+    width: 80% !important;
+    padding: 20px !important;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+
+    > * {
+      width: 100%;
+      margin-bottom: 15px;
+      font-size: 17px;
+    }
+  }
+
+  .flex.space-x-2 {
+    font-size: 14px;
+    margin-top: 55px;
+  }
+
+  img {
+    max-width: 97%;
+    height: auto;
+    margin-top: -117px;
+  }
+
+  .img-left {
+    width: 60px;
+    height: 55px;
+    margin-top: -102px;
+  }
+
+  .data {
+    font-size: 17px;
+  }
+
+  .long {
+    width: 100% !important; /* خط کامنت‌شده در صورت نیاز اینجا می‌آید */
+  }
+
+  .res {
+    height: 85px;
+  }
+
+  .left {
+    margin-top: 55px;
+    font-size: 13px;
+  }
+
+  .telex {
+    font-size: 14px;
+  }
+
+  .up {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .responsive-modal {
+    width: 85% !important;
+    padding: 18px;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+
+    > * {
+      width: 100%;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+  }
+
+  .flex.space-x-2 {
+    font-size: 12px;
+    margin-top: 50px;
+  }
+
+  img {
+    max-width: 95%;
+    height: auto;
+    margin-top: -59px;
+  }
+
+  .img-left {
+    width: 55px;
+    height: 50px;
+    margin-top: -30px;
+  }
+
+  .data {
+    font-size: 16px;
+  }
+
+  .long {
+    width: 100% !important; /* خط کامنت‌شده در صورت نیاز اینجا می‌آید */
+  }
+
+  .res {
+    height: 80px;
+  }
+
+  .left {
+    margin-top: 50px;
+    font-size: 12px;
+  }
+
+  .telex {
+    font-size: 13px;
+  }
+
+  .up {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-modal {
+    width: 94% !important;
+    padding: 16px;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+
+    > * {
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+  }
+
+  .flex.space-x-2 {
+    font-size: 11px;
+    margin-top: 44px;
+  }
+
+  img {
+    max-width: 90%;
+    height: auto;
+    margin-top: -30px;
+  }
+
+  .img-left {
+    width: 50px;
+    height: 43px;
+    margin-top: -35px;
+  }
+
+  .data {
+    font-size: 15px;
+  }
+
+  .long {
+    width: 100% !important; 
+  }
+
+  .res {
+    height: 75px;
+  }
+
+  .left {
+    margin-top: 45px;
+    font-size: 11px;
+  }
+
+  .telex {
+    font-size: 12px;
+  }
+
+  .up {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 468px) {
+  .responsive-modal {
+    width: 90% !important;
+    padding: 16px;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+
+    > * {
+      width: 100%;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+  }
+
+  .flex.space-x-2 {
+    font-size: 8px;
+    margin-top: 31px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-top: -35px;
+  }
+
+  .img-left {
+    width: 40px;
+    height: 40px;
+  }
+
+  .data {
+    font-size: 13px;
+  }
+
+  .long {
+    width: 100%; /* خط کامنت‌شده در صورت نیاز اینجا می‌آید */
+  }
+
+  .res {
+    height: 50px;
+  }
+
+  .left {
+    margin-top: 31px;
+    font-size: 11px;
+  }
+
+  .telex {
+    font-size: 10px;
+  }
+
+  .up {
+    font-size: 12px;
+  }
+}
